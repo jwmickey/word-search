@@ -1,0 +1,44 @@
+@import './styles/vars.scss';
+
+html, input, textarea {
+    font-family: $font;
+}
+
+.wrap {
+    font-family: $font;
+    margin: auto;
+    height: 100vh;
+    width: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+form {
+    font-size: 1.25em;
+}
+
+label {
+    margin-right: 16px;
+}
+
+input, textarea {
+    padding: 4px;
+    font-size: 1.05em;
+}
+
+textarea {
+    width: 400px;
+}
+
+.won {
+    font-size: 1.5em;
+    color: green;
+}

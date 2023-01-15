@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="board">
+        <div *ngFor="let row of board.rows; index as y" class="row">
+            <div *ngFor="let cell of row; index as x" 
+                class="cell" 
+                [class]="cell?.classes?.join(' ')"
+                (click)="handleClick(x, y)">
+                {{ cell?.value }}
+            </div>
+        </div>
+    </div>
+    <div class="wordlist">
+        <ul class="remaining">
+            <li *ngFor="let word of remainingWords">{{ word }}</li>
+        </ul>
+        <ul class="found">
+            <li *ngFor="let word of foundWords">{{ word }}</li>
+        </ul>
+    </div>
+</div>

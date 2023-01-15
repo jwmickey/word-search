@@ -1,1 +1,21 @@
-<word-search-nx-welcome></word-search-nx-welcome>
+<div class="wrap">
+    <div class="game">
+        <form id="setupForm" *ngIf="!started" #boardForm="ngForm" (ngSubmit)="playGame(boardForm)">
+            <div class="form-group">
+                <label for="size">Board Size</label>
+                <input name="size" id="size" value="15" type="number" [(ngModel)]="size" />
+            </div>
+            <div class="form-group">
+                <textarea rows="20" name="words" [(ngModel)]="words"
+                    placeholder="Word list, separated by comma or new line"></textarea>
+            </div>
+            <button>Play!</button>
+        </form>
+
+        <word-search-board *ngIf="started" [size]="size" [words]="wordList" (winGame)="onWinGame()"></word-search-board>
+    </div>
+    <div class="controls">
+        <div *ngIf="won" class="won">Puzzle Solved!</div>
+        <button id="endGame" *ngIf="showEndGameButton()" (click)="endGame()">End Game</button>
+    </div>
+</div>
